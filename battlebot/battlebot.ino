@@ -3,15 +3,15 @@
 #include <Arduino.h>
 
 // Motor control pins
-const int ENA = 32; // Left motor PWM
-const int IN1 = 25;
-const int IN2 = 26;
+const int ENA = 16; // Left motor PWM
+const int IN1 = 5;
+const int IN2 = 17;
 
-const int ENB = 33; // Right motor PWM
-const int IN3 = 27;
-const int IN4 = 14;
+const int ENB = 21; // Right motor PWM
+const int IN3 = 18;
+const int IN4 = 19;
 
-const int ESC_PIN = 13; // Brushless ESC pin
+const int ESC_PIN = 4;
 
 // LEDC PWM channels
 #define CH_LEFT  0
@@ -44,7 +44,7 @@ void setup() {
   esc.writeMicroseconds(1000); // Start with idle signal
 
   // PS4 controller
-  PS4.begin("78:2b:46:d6:02:0d");
+  PS4.begin("e4:17:d8:66:83:10");
   Serial.println("Waiting for PS4 controller...");
 }
 
